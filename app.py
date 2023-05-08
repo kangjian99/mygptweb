@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = SESSION_SECRET_KEY # SECRET_KEY是Flask用于对session数据进行加密和签名的一个关键值。如果没有设置将无法使用session
 
 stream_data = {}
-table_name = 'prompts'
+table_name = 'prompts1'
 
 def Chat_Completion(question, tem, messages, stream):
     try:
