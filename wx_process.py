@@ -147,13 +147,13 @@ def get_baidu_content(url):
     soup = BeautifulSoup(html, 'html.parser')
 
     # 提取标题
-    title = soup.find('div', class_='_28fPT').text
+    title = soup.find('div', class_='_3tNyU').text
 
     # 提取作者
-    author = soup.find('p', class_='_7y5nA').text
+    author = soup.find('span', class_='_2gGWi').text
 
     # 提取正文
-    content_tags = soup.find_all('div', class_='_3ygOc')
+    content_tags = soup.find_all('div', class_='dpu8C _2kCxD')
 
     # 将所有正文内容拼接在一起
     content = '\n'.join([tag.text for tag in content_tags])
