@@ -20,8 +20,8 @@ def Chat_Completion(model, question, tem, messages, stream):
         messages.append({"role": "user", "content": question})
         print("generate_text:", messages)
         response = openai.ChatCompletion.create(
-        model= model,
-        messages= messages,
+        model = model,
+        messages = messages,
         temperature=tem,
         stream=stream,
         top_p=1.0,
