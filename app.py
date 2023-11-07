@@ -38,9 +38,9 @@ def Chat_Completion(model, question, tem, messages, stream):
         print(e)
         return "Connection Error! Please try again."
 
-def send_gpt(prompt, tem, messages, user_id):
+def send_gpt(model, prompt, tem, messages, user_id):
     partial_words = ""
-    response = Chat_Completion(prompt, tem, messages, True)
+    response = Chat_Completion(model, prompt, tem, messages, True)
     
     # 添加如下调试信息
     # print("Response:", response)
