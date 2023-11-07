@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = SESSION_SECRET_KEY # SECRET_KEY是Flask用于对sessi
 stream_data = {}
 table_name = 'prompts1'
 
-def Chat_Completion(question, tem, messages, stream):
+def Chat_Completion(model, question, tem, messages, stream):
     try:
         messages.append({"role": "user", "content": question})
         print("generate_text:", messages)
@@ -220,8 +220,9 @@ def stream():
                 messages = []
                 # time.sleep(5)
             counter += 1
+            model_gpt = model_4 if prompt.startwith("魔法") else model
             try:
-                for res in send_gpt(prompt, temperature, messages, user_id):
+                for res in send_gpt(model_gpt, prompt, temperature, messages, user_id):
                     if 'content' in res:
                         markdown_message = generate_markdown_message(res['content'])
                         # print(f"Yielding markdown_message: {markdown_message}")  # 添加这一行
