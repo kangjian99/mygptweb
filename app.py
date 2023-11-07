@@ -41,11 +41,6 @@ def Chat_Completion(model, question, tem, messages, stream):
 def send_gpt(model, prompt, tem, messages, user_id):
     partial_words = ""
     response = Chat_Completion(model, prompt, tem, messages, True)
-    
-    # 添加如下调试信息
-    # print("Response:", response)
-    # print("Response status code:", response.status_code)
-    # print("Response headers:", response.headers)
 
     for chunk in response:
         if chunk:
