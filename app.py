@@ -44,7 +44,7 @@ def send_gpt(model, prompt, tem, messages, user_id):
 
     for chunk in response:
         if chunk:
-            # print("Decoded chunk:", chunk)  # 添加这一行以打印解码的块
+            print("Decoded chunk:", chunk)  # 添加这一行以打印解码的块
             try:
                 if "delta" in chunk['choices'][0]:
                     finish_reason = chunk['choices'][0]['finish_reason']
